@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Épicurien - Restaurant</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: url('https://source.unsplash.com/1600x900/?restaurant') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        header h1, header p, header a {
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0.2em 0;
+        }
+        header p {
+            font-size: 1.3rem;
+        }
+        header a {
+            display: inline-block;
+            padding: 0.8em 1.5em;
+            margin-top: 1em;
+            border: 2px solid white;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        header a:hover {
+            background-color: white;
+            color: #333;
+        }
+        section {
+            padding: 2em 5%;
+        }
+        .about, .services, .hours, .contact {
+            background-color: #f7f7f7;
+            margin-bottom: 2em;
+            border-radius: 8px;
+            padding: 1.5em;
+            animation: slideIn 1.5s ease-in-out;
+        }
+        .services {
+            display: flex;
+            justify-content: space-between;
+            gap: 1em;
+        }
+        .services div {
+            background-color: white;
+            padding: 1em;
+            border-radius: 8px;
+            flex-basis: 48%;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1>L'Épicurien</h1>
+            <p>33 Rue Vigne Saint-Avold, 57000 Metz</p>
+            <p>Note: 4.7/5 (317 avis)</p>
+            <a href="tel:0387366911">Appeler maintenant</a>
+        </div>
+    </header>
+
+    <section class="about">
+        <h2>À Propos</h2>
+        <p>L'Épicurien est un restaurant gastronomique situé au cœur de Metz. Nous vous proposons une cuisine raffinée et locale, préparée avec soin par notre chef d'exception. Rejoignez-nous pour un moment de plaisir culinaire inégalé.</p>
+    </section>
+
+    <section class="services">
+        <div>
+            <h3>Menu Saison</h3>
+            <p>Découvrez notre menu qui change au rythme des saisons, mettant en avant des produits locaux et frais.</p>
+        </div>
+        <div>
+            <h3>Événements Privés</h3>
+            <p>Nous offrons la possibilité de privatiser notre restaurant pour vos événements privés, mariages, et fêtes d'anniversaire.</p>
+        </div>
+    </section>
+
+    <section class="hours">
+        <h2>Horaires</h2>
+        <p>Ouvert du mardi au dimanche : 12:00 - 14:30, 18:30 - 22:00</p>
+        <p>Fermé le lundi</p>
+    </section>
+
+    <section class="contact">
+        <h2>Contact</h2>
+        <p>Adresse: 33 Rue Vigne Saint-Avold, 57000 Metz</p>
+        <p>Téléphone: 03 87 36 69 11</p>
+        <div id="map" style="height: 300px; background-color: #eee;">
+            <!-- This is a placeholder for the map -->
+            <p style="line-height: 300px; text-align: center;">Google Maps intégration here</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 L'Épicurien. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
