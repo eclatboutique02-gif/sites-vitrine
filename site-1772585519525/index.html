@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Épicurien - Metz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .loading-screen.hidden {
+            display: none;
+        }
+        .hero {
+            position: relative;
+            background-image: url('https://source.unsplash.com/1920x1080/?restaurant');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            clip-path: circle(100% at 50% 50%);
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin: 0;
+            opacity: 0;
+            animation: fadeIn 1s forwards ease-in-out;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            opacity: 0;
+            animation: slideUp 1s forwards ease-in-out 0.5s;
+        }
+        .overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .btn {
+            background: linear-gradient(45deg, #ffd700, #ff9033);
+            padding: 10px 30px;
+            font-size: 1.2rem;
+            border: none;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+            from { transform: translateY(20px); }
+        }
+        .content {
+            padding: 50px;
+            background: white;
+            text-align: center;
+        }
+        .services, .testimonials, .hours, .contact {
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .service-card, .testimonial-card, .hours-card, .contact-card {
+            width: 300px;
+            background: #fafafa;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        .service-card:hover, .testimonial-card:hover, .hours-card:hover, .contact-card:hover {
+            transform: translateY(-10px);
+        }
+        .service-card h3, .testimonial-card h3 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 10px;
+        }
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+        footer {
+            background: #222;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+            transition: color 0.2s ease-in-out;
+        }
+        footer a:hover {
+            color: #ff9033;
+        }
+        .footer-icons svg {
+            width: 30px;
+            height: 30px;
+            fill: #ffd700;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: fill 0.2s ease-in-out;
+        }
+        .footer-icons svg:hover {
+            fill: #ff9033;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .service-card, .testimonial-card, .hours-card, .contact-card {
+                width: calc(100% - 40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-screen"><div class="spinner"></div></div>
+    <section class="hero">
+        <div class="overlay"></div>
+        <h1>L'Épicurien</h1>
+        <p>33 Rue Vigne Saint-Avold, 57000 Metz</p>
+        <a href="tel:03 87 36 69 11" class="btn">Réserver / Appeler</a>
+    </section>
+    <section class="content">
+        <div class="services">
+            <div class="service-card">
+                <h3>Cuisine raffinée</h3>
+                <p>Profitez de plats délicats préparés avec des ingrédients frais et de saison.</p>
+            </div>
+            <div class="service-card">
+                <h3>Ambiance conviviale</h3>
+                <p>Un cadre chaleureux et accueillant pour des moments entre amis ou en famille.</p>
+            </div>
+            <div class="service-card">
+                <h3>Vins de qualité</h3>
+                <p>Dégustez notre sélection de vins choisis avec soin pour sublimer vos repas.</p>
+            </div>
+        </div>
+        <div class="testimonials">
+            <div class="testimonial-card">
+                <h3>Jean Dupont</h3>
+                <p class="stars">★★★★★</p>
+                <p>Une expérience gastronomique exceptionnelle! Le menu dégustation est un must.</p>
+            </div>
+            <div class="testimonial-card">
+                <h3>Marie Durant</h3>
+                <p class="stars">★★★★★</p>
+                <p>L'atmosphère est unique et le service impeccable. Nous reviendrons sans hésiter!</p>
+            </div>
+            <div class="testimonial-card">
+                <h3>Laurent Petit</h3>
+                <p class="stars">★★★★★</p>
+                <p>Des plats savoureux et une carte des vins impressionnante. Une belle découverte.</p>
+            </div>
+        </div>
+        <div class="hours">
+            <div class="hours-card">
+                <h3>Horaires d'ouverture</h3>
+                <p>Lundi - Vendredi: 12h - 15h, 19h - 23h</p>
+                <p>Samedi - Dimanche: 12h - 23h</p>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contact-card">
+                <span>📍</span>
+                <p><a href="https://goo.gl/maps/yourmaplink" target="_blank">Nous trouver sur Google Maps</a></p>
+                <p>Téléphone: <a href="tel:03 87 36 69 11">03 87 36 69 11</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-icons">
+            <svg><!-- Facebook Icon --></svg>
+            <svg><!-- Instagram Icon --></svg>
+            <svg><!-- Twitter Icon --></svg>
+        </div>
+        <p>&copy; 2023 L'Épicurien. Tous droits réservés. | Site Web par l'agence Web Créative</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                document.querySelector('.loading-screen').classList.add('hidden');
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
